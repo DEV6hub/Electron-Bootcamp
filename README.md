@@ -18,7 +18,7 @@ The json server will serve rest api's to be used for Electron Shirtastic.By defa
 localhost:3000.Go to folder JSON Server at the root level and run below commands.
 
 `json-server --watch signup.json`  
-`json-server --watch tshirts.json --port 4000` -- You can check 
+`json-server --watch tshirts.json --port 4000`
 
  You can check by typing below urls in your browser to see if the server has spin up.
 
