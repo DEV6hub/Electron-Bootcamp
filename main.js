@@ -2,22 +2,44 @@ const {app, BrowserWindow, Menu} = require('electron')
 const shell = require('electron').shell 
 const path = require('path')
 const url = require('url')
+const ipc = require('electron').ipcMain;
+const { crashReporter } = require('electron');
 
-const ipc = require('electron').ipcMain
-    // Keep a global reference of the window object, if you don't, the window will
-    // be closed automatically when the JavaScript object is garbage collected.
-    let win
-    // Enable live reload for all the files inside your project directory
-   require('electron-reload')(__dirname);
+crashReporter.start({
+  productName: 'electron-shirtastic',
+  companyName: 'Dev6',
+  submitURL: 'http://localhost:1127/crashreports',
+  uploadToServer: true
+})
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let win;
+// Enable live reload for all the files inside your project directory
+//soft reset only for front-end code
+// require('electron-reload')(__dirname);
+// another soft reset
+//    require('electron-reload')(__dirname, { 
+//        electron: require('${__dirname}/../../node_modules/electron') 
+//     })
+//hard reset
+require('electron-reload')(__dirname, {
+    electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+});
+
+// To crash the main process in order to test Crash Reporting simple-breakpad-server
+//process.crash();
+
+
   function createWindow () {
     // Create the browser window.
-    win = new BrowserWindow({width: 1000, height: 800})
+    win = new BrowserWindow({width: 1200, height: 800})
     // and load the index.html of the app.
     win.loadFile('index.html')
   
     // Open the DevTools.
     win.webContents.openDevTools()
-  
+    // Devtron for debugging application
+    require('devtron').install();
     // Emitted when the window is closed.
     win.on('closed', () => {
       // Dereference the window object, usually you would store windows
@@ -73,4 +95,17 @@ const ipc = require('electron').ipcMain
       createWindow()
     }
   })
+
+const {ipcMain, dialog} = require('electron')
+
+ipcMain.on('open-file-dialog', (event) => {
+  dialog.showOpenDialog({
+    properties: ['openFile', 'openDirectory']
+  }, (files) => {
+    if (files) {
+      event.sender.send('selected-directory', files)
+    }
+  })
+})
+
   

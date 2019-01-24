@@ -19,12 +19,24 @@ localhost:3000.Go to folder JSON Server at the root level and run below commands
 
 `json-server --watch signup.json`  
 `json-server --watch tshirts.json --port 4000`
+`json-server --watch contactUs.json --port 5000`
+`json-server --watch crashReport.json --port 2000`
 
  You can check by typing below urls in your browser to see if the server has spin up.
 
  http://localhost:3000/userInfo
  http://localhost:4000/tshirts 
+ http://localhost:5000/contactUs
+ http://localhost:2000/crashReport
+
 
  ## Run Electron App
 
  `electron .`
+
+
+ ## To view crash reporting feature run below command on your terminal
+`npm install -g simple-breakpad-server`
+
+Navigate to below url in your browser to see the server and a list of crash reports submitted by Electron app.
+http://localhost:1127/crashreports 
