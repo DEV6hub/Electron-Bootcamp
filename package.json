@@ -1,12 +1,13 @@
 {
   "name": "electron-shirtastic-app",
-  "version": "9.0.0",
+  "version": "13.0.0",
   "description": "Electron Bootcamp Demo",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "build --dir",
     "dist": "build -p always",
+    "buildMac": "node_modules/.bin/electron-builder --mac",
     "build": "node_modules/.bin/electron-builder --win"
   },
   "keywords": [],
