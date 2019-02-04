@@ -40,3 +40,8 @@ localhost:3000.Go to folder JSON Server at the root level and run below commands
 
 Navigate to below url in your browser to see the server and a list of crash reports submitted by Electron app.
 http://localhost:1127/crashreports 
+
+ ## To host auto-updates from local server , follow below steps
+ 1. Go to dist folder in a new terminal window
+ 2. Run `http-server`.
+ 3. You can verify by visiting http://127.0.0.1:8080 on your browser to see the artifacts hosted.
