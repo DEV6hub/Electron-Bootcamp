@@ -1,27 +1,40 @@
-const {app, BrowserWindow, Menu} = require('electron')
+const {app, BrowserWindow, Menu } = require('electron')
 const shell = require('electron').shell 
 const path = require('path')
 const url = require('url')
 const ipc = require('electron').ipcMain;
-const isDev = require('electron-is-dev');
-const { crashReporter } = require('electron');
+//const isDev = require('electron-is-dev');
+//const { crashReporter } = require('electron');
+const { appUpdater } = require('./assets/js/autoupdater');
 
-crashReporter.start({
-  productName: 'electron-shirtastic',
-  companyName: 'Dev6',
-  submitURL: 'http://localhost:1127/crashreports',
-  uploadToServer: true
-})
+// crashReporter.start({
+//   productName: 'electron-shirtastic',
+//   companyName: 'Dev6',
+//   submitURL: 'http://localhost:1127/crashreports',
+//   uploadToServer: true
+// })
+/* Handling squirrel.windows events on windows 
+only required if you have build the windows with target squirrel. For NSIS target you don't need it. */
+if (require('electron-squirrel-startup')) {
+	app.quit();
+}
+// Funtion to check the current OS. As of now there is no proper method to add auto-updates to linux platform.
+function isWindowsOrmacOS() {
+	return process.platform === 'darwin' || process.platform === 'win32';
+}
+
+
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 // Enable live reload for all the files inside your project directory
 
-if(isDev) {
-  require('electron-reload')(__dirname, {
-    electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
-  });
-}
+// if(isDev) {
+//   require('electron-reload')(__dirname, {
+//     electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+//   });
+// }
 // To crash the main process in order to test Crash Reporting simple-breakpad-server
 //process.crash();
 
@@ -31,12 +44,21 @@ if(isDev) {
     win = new BrowserWindow({width: 1200, height: 800})
     // and load the index.html of the app.
     win.loadFile('index.html')
-    if(isDev) {
-      // Open the DevTools.
-      win.webContents.openDevTools()
-      // Devtron for debugging application
-      require('devtron').install();
-    }
+    const page = win.webContents;
+  
+    page.once('did-frame-finish-load', () => {
+      const checkOS = isWindowsOrmacOS();
+      if (checkOS) {
+        // Initate auto-updates on macOs and windows
+        appUpdater();
+    }});
+
+    // if(isDev) {
+    //   // Open the DevTools.
+    //   win.webContents.openDevTools()
+    //   // Devtron for debugging application
+    //   require('devtron').install();
+    // }
     // Emitted when the window is closed.
     win.on('closed', () => {
       // Dereference the window object, usually you would store windows
@@ -62,9 +84,6 @@ if(isDev) {
                     }
                 }
             ]
-        },
-        {
-            label: 'Info'
         }
     ])
     Menu.setApplicationMenu(menu);

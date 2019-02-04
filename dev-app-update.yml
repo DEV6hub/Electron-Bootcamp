@@ -1,0 +1,12 @@
+version: 2.0.0
+files:
+  - url: electron-shirtastic-app-2.0.0-mac.zip
+    sha512: 5NxfJBdo7GmzmCUar1h83RYE/BIbWKCc8WQ869Hxxoue41Zgc2VzdSq3H1gKrYrkZCwXsS7/tPjbDxL+NUZ2yw==
+    size: 62202560
+    blockMapSize: 66372
+  - url: electron-shirtastic-app-2.0.0.dmg
+    sha512: xtB0X5bEFooipqmPohsFtEm+i34fi0M4my3hLPS/GBTIE4Vr84au6FtzYZ3yopnvY0NALFSXPVa1riAxVf2C3Q==
+    size: 64127186
+path: electron-shirtastic-app-2.0.0-mac.zip
+sha512: 5NxfJBdo7GmzmCUar1h83RYE/BIbWKCc8WQ869Hxxoue41Zgc2VzdSq3H1gKrYrkZCwXsS7/tPjbDxL+NUZ2yw==
+releaseDate: '2019-02-01T21:24:24.082Z'

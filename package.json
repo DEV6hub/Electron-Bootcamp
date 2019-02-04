@@ -1,18 +1,25 @@
 {
   "name": "electron-shirtastic-app",
-  "version": "1.0.0",
+  "version": "9.0.0",
   "description": "Electron Bootcamp Demo",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "build -p always",
+    "build": "node_modules/.bin/electron-builder --win"
   },
   "keywords": [],
   "author": "gagank@dev6.com",
   "license": "ISC",
   "build": {
     "appId": "com.dev6.electron",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080"
+      }
+    ],
     "mac": {
       "category": "public.app-category.educational"
     },
@@ -37,7 +44,14 @@
       ]
     },
     "win": {
-      "target": "squirrel",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ],
       "icon": "build/icon.ico"
     }
   },
@@ -50,6 +64,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "electron-is-dev": "^1.0.1",
+    "electron-log": "^3.0.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^4.0.6",
+    "http-server": "^0.11.1",
     "json-server": "^0.14.2"
   }
 }
