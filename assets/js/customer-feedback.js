@@ -19,21 +19,6 @@ ipcRenderer.on('selected-directory', (event, path) => {
   document.getElementById('selected-file').innerHTML = `You selected: ${path}`
 })
 
-const notification = {
-  title: 'Basic Notification',
-  body: 'Short message part'
-}
-const myNotification = new window.Notification(notification.title, notification);
-// const notificationButton = document.getElementById('basic-noti')
-
-// notificationButton.addEventListener('click', () => {
-//   const myNotification = new window.Notification(notification.title, notification)
-
-//   myNotification.onclick = () => {
-//     console.log('Notification clicked')
-//   }
-// })
-
 
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();

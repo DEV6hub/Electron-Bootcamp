@@ -11,25 +11,17 @@ autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting');
 
 app.on('ready', function () {
-	log.info("Check for upates");
 	autoUpdater.checkForUpdates();
 });
-// const version = app.getVersion();
-const platform = os.platform() + '_' + os.arch();  // usually returns darwin_64
 
-const updaterFeedURL = 'http://127.0.0.1:8080/';
-//const updaterFeedURL = 'http://zulipdesktop.herokuapp.com/update/' + platform + '/' + version;
-// replace updaterFeedURL with http://yourappname.herokuapp.com
 
 function appUpdater() {
 	autoUpdater.setFeedURL({
 		provider: "generic",
 		url: "http://127.0.0.1:8080"
-	});
-	/* Log whats happening
-	TODO send autoUpdater events to renderer so that we could console log it in developer tools
-	You could alsoe use nslog or other logging to see what's happening */
-	autoUpdater.on('error', err => console.log(err));
+});
+
+	autoUpdater.on('error', err => log.info(err));
 	autoUpdater.on('checking-for-update', () => log.info('checking-for-update'));
 	autoUpdater.on('update-available', () => {
 		dialog.showMessageBox({

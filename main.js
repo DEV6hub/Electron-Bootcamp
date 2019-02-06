@@ -3,16 +3,16 @@ const shell = require('electron').shell
 const path = require('path')
 const url = require('url')
 const ipc = require('electron').ipcMain;
-//const isDev = require('electron-is-dev');
-//const { crashReporter } = require('electron');
+const isDev = require('electron-is-dev');
+const { crashReporter } = require('electron');
 const { appUpdater } = require('./assets/js/autoupdater');
 
-// crashReporter.start({
-//   productName: 'electron-shirtastic',
-//   companyName: 'Dev6',
-//   submitURL: 'http://localhost:1127/crashreports',
-//   uploadToServer: true
-// })
+crashReporter.start({
+  productName: 'electron-shirtastic',
+  companyName: 'Dev6',
+  submitURL: 'http://localhost:1127/crashreports',
+  uploadToServer: true
+})
 /* Handling squirrel.windows events on windows 
 only required if you have build the windows with target squirrel. For NSIS target you don't need it. */
 if (require('electron-squirrel-startup')) {
@@ -30,11 +30,11 @@ function isWindowsOrmacOS() {
 let win;
 // Enable live reload for all the files inside your project directory
 
-// if(isDev) {
-//   require('electron-reload')(__dirname, {
-//     electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
-//   });
-// }
+if(isDev) {
+  require('electron-reload')(__dirname, {
+    electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+  });
+}
 // To crash the main process in order to test Crash Reporting simple-breakpad-server
 //process.crash();
 
@@ -53,12 +53,12 @@ let win;
         appUpdater();
     }});
 
-    // if(isDev) {
-    //   // Open the DevTools.
-    //   win.webContents.openDevTools()
-    //   // Devtron for debugging application
-    //   require('devtron').install();
-    // }
+    if(isDev) {
+      // Open the DevTools.
+      win.webContents.openDevTools()
+      // Devtron for debugging application
+      require('devtron').install();
+    }
     // Emitted when the window is closed.
     win.on('closed', () => {
       // Dereference the window object, usually you would store windows

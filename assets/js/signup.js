@@ -11,8 +11,8 @@ function(n) {
       init: function() {
         const notification = {
           title: 'Signup Alert',
-          body: 'Welcome to Dev6'
-         // icon: path.join(__dirname, '../images/TShirt.png')
+          body: 'Welcome to Dev6',
+          icon: path.join(__dirname, '../images/TShirt.png')
         }
         const myNotification = new window.Notification(notification.title, notification);
         $('#signupBtn').click( function (event) {
@@ -32,7 +32,7 @@ function(n) {
             .then(function (response) {
                 //handle success
                 console.log(response);
-                
+                const myNotification = new window.Notification(notification.title, notification);
             })
             .catch(function (response) {
                 //handle error
