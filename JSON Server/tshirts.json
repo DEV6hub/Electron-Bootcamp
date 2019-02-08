@@ -5,7 +5,7 @@
       "name": "Happy Shirt",
       "type": "Womens Fine Jersey Short Sleeve",
       "price": 14.99,
-      "imgSrc": "/assets/images/WomensShirtDesigns-3.jpg",
+      "imgSrc": "/images/WomensShirtDesigns-3.jpg",
       "gender": "F"
     },
     {
@@ -13,7 +13,7 @@
       "name": "Emoji Shirt",
       "type": "Womens Fine Jersey Short Sleeve",
       "price": 15.99,
-      "imgSrc": "/assets/images/WomensShirtDesigns-2.jpg",
+      "imgSrc": "/images/WomensShirtDesigns-2.jpg",
       "gender": "F"
     },
     {
@@ -21,7 +21,7 @@
       "name": "Falcon on black",
       "type": "Mens Fine Jersey Short Sleeve",
       "price": 19.99,
-      "imgSrc": "/assets/images/MensShirtDesigns-3.jpg",
+      "imgSrc": "/images/MensShirtDesigns-3.jpg",
       "gender": "M"
     },
     {
@@ -29,7 +29,7 @@
       "name": "Falcon on white",
       "type": "Mens Fine Jersey Short Sleeve",
       "price": 19.99,
-      "imgSrc": "/assets/images/MensShirtDesigns-4.jpg",
+      "imgSrc": "/images/MensShirtDesigns-4.jpg",
       "gender": "M"
     },
     {
@@ -37,7 +37,7 @@
       "name": "Office Space",
       "type": "Womens Fine Jersey Short Sleeve",
       "price": 14.99,
-      "imgSrc": "/assets/images/WomensShirtDesigns-1.jpg",
+      "imgSrc": "/images/WomensShirtDesigns-1.jpg",
       "gender": "F"
     },
     {
@@ -45,7 +45,7 @@
       "name": "Smile",
       "type": "Mens Fine Jersey Short Sleeve",
       "price": 15.99,
-      "imgSrc": "/assets/images/MensShirtDesigns-1.jpg",
+      "imgSrc": "/images/MensShirtDesigns-1.jpg",
       "gender": "M"
     },
     {
@@ -53,7 +53,7 @@
       "name": "Dabbing Skeleton",
       "type": "Mens Fine Jersey Short Sleeve",
       "price": 19.99,
-      "imgSrc": "/assets/images/MensShirtDesigns-5.jpg",
+      "imgSrc": "/images/MensShirtDesigns-5.jpg",
       "gender": "M"
     },
     {
@@ -61,7 +61,7 @@
       "name": "Test Shirt",
       "type": "Mens Fine Jersey Short Sleeve",
       "price": 21.99,
-      "imgSrc": "/assets/images/TShirtTest.jpg",
+      "imgSrc": "/images/TShirtTest.jpg",
       "gender": "M"
     }
   ]

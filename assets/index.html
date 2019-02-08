@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Electron Shirtastic App</title>
+            <!-- Link to individual css for various screens--> 
+         <link rel="stylesheet" href="css/welcome.css">
+         <link rel="stylesheet" href="css/signup.css">
+         <link rel="stylesheet" href="css/catalog.css">
+         <link rel="stylesheet" href="css/contact-us.css">
+         <!-- Link to individial html for various screens --> 
+         <link rel="import" href="screens/welcome.html">
+         <link rel="import" href="screens/signup.html">
+         <link rel="import" href="screens/catalog.html">
+         <link rel="import" href="screens/contact-us.html">
+        <script data-main="app" src="lib/require.js"></script>
+    </head>
+    <body>
+        <!-- Navigation Menu on left hand side--> 
+        <div class="sidenav">
+                <a id="welcome-menu" data-section="welcome" href="#">Welcome</a>
+                <a id="signup-menu" data-section="signup" href="#">Sign Up</a>
+                <a id="catalog-menu" data-section="catalog" href="#">Shirts Catalog</a>
+                <a id="contact-us-menu" data-section="contact" href="#">Contact Us</a>
+        </div>
+        <!-- Main container for loading different screens--> 
+        <div class="main" id="main">
+        </div>
+    </body>
+</html>
