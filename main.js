@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+const log = require('electron-log');
 const isDev = require('electron-is-dev');
 const path = require('path')
 
@@ -12,6 +13,7 @@ if(isDev) {
 let win
 
 function createWindow () {
+  log.info('window creation');
   // Create the browser window.
   win = new BrowserWindow({ width: 800, height: 600 })
 
