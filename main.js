@@ -1,7 +1,8 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const log = require('electron-log');
 const isDev = require('electron-is-dev');
 const path = require('path')
+const shell = require('electron').shell 
 
 if(isDev) {
   require('electron-reload')(__dirname, {
@@ -31,6 +32,27 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
+  var menu = Menu.buildFromTemplate([
+    {
+        label: 'Menu',
+        submenu: [
+            {
+                label: 'About Dev6',
+                click() {
+                    console.log('clicked');
+                }
+            },
+            {type: 'separator'},
+            {
+                label: 'Exit',
+                click() {
+                    app.quit()
+                }
+            }
+        ]
+    }
+])
+  Menu.setApplicationMenu(menu);
 }
 
 // This method will be called when Electron has finished
