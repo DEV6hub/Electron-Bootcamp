@@ -1,4 +1,5 @@
 const {app, BrowserWindow, Menu } = require('electron')
+const log = require('electron-log');
 const shell = require('electron').shell 
 const path = require('path')
 const url = require('url')
@@ -41,6 +42,7 @@ if(isDev) {
 
   function createWindow () {
     // Create the browser window.
+    log.info('window creation');
     win = new BrowserWindow({width: 1200, height: 800})
     // and load the index.html of the app.
     win.loadFile('index.html')
