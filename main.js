@@ -4,6 +4,13 @@ const isDev = require('electron-is-dev');
 const path = require('path')
 const shell = require('electron').shell 
 const {ipcMain, dialog} = require('electron')
+const { crashReporter } = require('electron');
+crashReporter.start({
+  productName: 'electron-shirtastic',
+  companyName: 'Dev6',
+  submitURL: 'http://localhost:1127/crashreports',
+  uploadToServer: true
+})
 
 ipcMain.on('open-file-dialog', (event) => {
   dialog.showOpenDialog({
