@@ -5,6 +5,13 @@ const path = require('path')
 const shell = require('electron').shell 
 const {ipcMain, dialog} = require('electron')
 const { crashReporter } = require('electron');
+const { appUpdater } = require('./assets/js/autoupdater');
+
+// Funtion to check the current OS. As of now there is no proper method to add auto-updates to linux platform.
+function isWindowsOrmacOS() {
+	return process.platform === 'darwin' || process.platform === 'win32';
+}
+
 crashReporter.start({
   productName: 'electron-shirtastic',
   companyName: 'Dev6',
@@ -38,6 +45,15 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('index.html')
+  const page = win.webContents;
+  
+  page.once('did-frame-finish-load', () => {
+    const checkOS = isWindowsOrmacOS();
+    if (checkOS) {
+      // Initate auto-updates on macOs and windows
+      appUpdater();
+  }});
+  
   if(isDev) {
     // Open the DevTools.
     win.webContents.openDevTools()
