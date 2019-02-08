@@ -2,8 +2,10 @@
   "name": "shirtastic-javascript-app",
   "version": "1.0.0",
   "description": "Shirtastic Javscript App",
+  "main": "main.js",
   "scripts": {
-    "start": "light-server -s . -p 7070 -w \"assets/app/**/*.js, assets/screens/**/*.html, assets/css/**/*.css, assets/index.html, assets/app.js\""
+    "start": "light-server -s . -p 7070 -w \"assets/app/**/*.js, assets/screens/**/*.html, assets/css/**/*.css, assets/index.html, assets/app.js\"",
+    "startElectronApp": "electron ."
   },
   "keywords": [],
   "author": "gagank@dev6.com",
