@@ -10,7 +10,8 @@
   "author": "gagank@dev6.com",
   "license": "ISC",
   "devDependencies": {
-    "electron": "4.0.1"
+    "electron": "4.0.1",
+    "electron-reload": "^1.4.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
