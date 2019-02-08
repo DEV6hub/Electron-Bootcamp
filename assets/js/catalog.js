@@ -14,7 +14,7 @@ function(n) {
               let newHTML = '';
               for (let i = 0; i < response.data.length; i++) {
                 newHTML += '<div class="card">'
-               + '<img src=' + '".' + response.data[i].imgSrc + '"' + ' alt="John" style="width:100%">'
+               + '<img src=' + '".' + response.data[i].imgSrc + '"' + ' alt="TshirtImage" style="width:100%">'
                + '<h1>' + response.data[i].name + '</h1>'
                + '<p class="title">' + response.data[i].type + '</p>'
                + '<p>$' + response.data[i].price +'</p>'

@@ -1,24 +1,5 @@
-const path = require('path');
-
-const electron = require('electron');
-
-const BrowserWindow = electron.remote.BrowserWindow;
-
-const {ipcRenderer} = require('electron');
-
-const selectDirBtn = document.getElementById('attach-file');
 
 const axios =require('axios');
-
-selectDirBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-  ipcRenderer.send('open-file-dialog')
-})
-
-ipcRenderer.on('selected-directory', (event, path) => {
-  document.getElementById('selected-file').innerHTML = `You selected: ${path}`
-})
-
 
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
