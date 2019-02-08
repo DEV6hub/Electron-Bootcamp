@@ -3,6 +3,17 @@ const log = require('electron-log');
 const isDev = require('electron-is-dev');
 const path = require('path')
 const shell = require('electron').shell 
+const {ipcMain, dialog} = require('electron')
+
+ipcMain.on('open-file-dialog', (event) => {
+  dialog.showOpenDialog({
+    properties: ['openFile', 'openDirectory']
+  }, (files) => {
+    if (files) {
+      event.sender.send('selected-directory', files)
+    }
+  })
+})
 
 if(isDev) {
   require('electron-reload')(__dirname, {
@@ -76,6 +87,8 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

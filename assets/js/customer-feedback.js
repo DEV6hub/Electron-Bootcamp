@@ -1,6 +1,19 @@
 
 const axios =require('axios');
 
+const {ipcRenderer} = require('electron');
+
+const selectDirBtn = document.getElementById('attach-file');
+
+selectDirBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+  ipcRenderer.send('open-file-dialog')
+})
+
+ipcRenderer.on('selected-directory', (event, path) => {
+  document.getElementById('selected-file').innerHTML = `You selected: ${path}`
+})
+
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
   let formData = new FormData(document.querySelector('form'));
