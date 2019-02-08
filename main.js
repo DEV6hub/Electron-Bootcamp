@@ -39,7 +39,7 @@ function createWindow () {
             {
                 label: 'About Dev6',
                 click() {
-                    console.log('clicked');
+                  shell.openExternal('https://www.dev6.com/')
                 }
             },
             {type: 'separator'},
