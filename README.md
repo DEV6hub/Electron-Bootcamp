@@ -45,3 +45,30 @@ http://localhost:1127/crashreports
  1. Go to dist folder in a new terminal window
  2. Run `http-server`.
  3. You can verify by visiting http://127.0.0.1:8080 on your browser to see the artifacts hosted.
+
+ ## To make notifications work on Windows follow below steps. These steps are taken from Electron documentation https://electronjs.org/docs/tutorial/notifications
+
+ Steps to follow during development mode.
+ 1. During development add node_modules\electron\dist\electron.exe to your Start Menu. To do so, navigate to file in explorer, right-click and 'Pin to Start Menu'.
+ 2. Then add below line in main.js `app.setAppUserModelId(process.execPath)`.
+ 3. Now, the notifications should appear in windows during development as well.
+
+ Steps to follow during production mode.
+ 1. During production version, replace Step2 with below lines of code.
+    `const appId = "electron-shirtastic-app";`
+    `app.setAppUserModelId(appId);`
+ 2. Now build your electron app using command `npm run buildWin`.
+ 3. Click on the exe file generated from dist folder.
+ 4. Pin the application to Start menu.
+ 5. Now you should see the notifications working for Production version of Electron app as well.
+
+## To make notifications work on macOS follow below steps.
+ If notifications are not working during development mode. Perform below set of steps and run your application once for Production version.Now when you come back to development mode and re-run the electron app , notifications will start working for you in development mode as well.
+
+ 1. Build your electron app using command `npm run buildMac`.
+ 2. Run the dmg file from dist folder.
+ 3. Launch the application from Launchpad.
+ 4. Now you should see the notifications working for Production version of Electron app.
+
+
+

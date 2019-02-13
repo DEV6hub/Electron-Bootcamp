@@ -14,7 +14,7 @@
   "author": "gagank@dev6.com",
   "license": "ISC",
   "build": {
-    "appId": "com.dev6.electron",
+    "appId": "electron-shirtastic-app",
     "mac": {
       "category": "public.app-category.educational"
     },

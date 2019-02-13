@@ -12,6 +12,13 @@ crashReporter.start({
   uploadToServer: true
 })
 
+const appId = "electron-shirtastic-app";
+app.setAppUserModelId(appId);
+
+//During development uncomment below line of code to make notifications work on windows plus 
+//app.setAppUserModelId(process.execPath);
+
+
 ipcMain.on('open-file-dialog', (event) => {
   dialog.showOpenDialog({
     properties: ['openFile', 'openDirectory']
