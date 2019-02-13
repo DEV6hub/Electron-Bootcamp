@@ -15,7 +15,7 @@ crashReporter.start({
 const appId = "electron-shirtastic-app";
 app.setAppUserModelId(appId);
 
-//During development uncomment below line of code to make notifications work on windows plus 
+//During development uncomment below line of code to make notifications work on windows 
 //app.setAppUserModelId(process.execPath);
 
 
