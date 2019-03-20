@@ -1,39 +1,76 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-  
-  /** Index **/
+body {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: #2d4782;
+  font-weight: 900;
+}
+
+h4 {
+  color: #47a1d7;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+/** Index **/
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00083c+0,265996+50,193a7b+51,2969a3+100 */
+  background: rgb(0, 8, 60);
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba(0, 8, 60, 1) 0%, rgba(38, 89, 150, 1) 50%, rgba(25, 58, 123, 1) 51%, rgba(41, 105, 163, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(0, 8, 60, 1) 0%, rgba(38, 89, 150, 1) 50%, rgba(25, 58, 123, 1) 51%, rgba(41, 105, 163, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(0, 8, 60, 1) 0%, rgba(38, 89, 150, 1) 50%, rgba(25, 58, 123, 1) 51%, rgba(41, 105, 163, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00083c', endColorstr='#2969a3', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+.sidenav a {
+  padding: 10px 8px 10px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ffffff;
+  display: block;
+  border-top: 1px solid #6d81b0;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px;
+  /* Same as the width of the sidenav */
+  font-size: 14px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
   .sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #232c69;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #ffffff;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 14px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    padding-top: 15px;
   }
 
-  
+  .sidenav a {
+    font-size: 18px;
+  }
+}
