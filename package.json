@@ -6,10 +6,13 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --pack",
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "electron-builder install-app-deps && electron-rebuild",
     "buildWin": "electron-builder --win",
-    "buildMac": "electron-builder --mac -c.mac.identity=null"
+    "buildMac": "electron-builder --mac -c.mac.identity=null",
+    "gypNative": "node-gyp clean configure build",
+    "rebuild": "electron-rebuild -f -w ~/Documents/Electron-Bootcamp/assets/js/native/build/Release/addon.node"
   },
+  "gypfile": true,
   "keywords": [],
   "author": "gagank@dev6.com",
   "license": "ISC",
@@ -54,12 +57,15 @@
     "devtron": "^1.4.0",
     "electron": "4.0.1",
     "electron-builder": "^20.38.5",
+    "electron-rebuild": "^1.8.4",
     "electron-reload": "^1.4.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "electron-is-dev": "^1.0.1",
     "electron-log": "^3.0.1",
-    "json-server": "^0.14.2"
+    "json-server": "^0.14.2",
+    "nan": "^2.13.1",
+    "node-gyp": "^3.8.0"
   }
 }
