@@ -66,7 +66,8 @@
     "v8_use_snapshot": "true",
     "want_separate_host_toolset": 0,
     "xcode_version": "7.0",
-    "nodedir": "/Users/Ankit/.node-gyp/8.11.2",
-    "standalone_static_library": 1
+    "nodedir": "/Users/Ankit/.electron-gyp/.node-gyp/4.0.1",
+    "standalone_static_library": 1,
+    "target": "4.0.1"
   }
 }

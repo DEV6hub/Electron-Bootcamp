@@ -5,7 +5,7 @@ void Sum(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
   int i;
   double a = 3.1415926, b = 2.718;
-  for (i = 0; i < 100000000; i++) {
+  for (i = 0; i < 100000; i++) {
     a += b;
   }
   

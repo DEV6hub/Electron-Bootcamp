@@ -32,11 +32,10 @@ CFLAGS_C_Debug := \
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
-	-std=gnu++0x \
+	-std=gnu++1y \
 	-stdlib=libc++ \
 	-fno-rtti \
 	-fno-exceptions \
-	-fno-threadsafe-statics \
 	-fno-strict-aliasing
 
 # Flags passed to only ObjC files.
@@ -46,13 +45,13 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/Ankit/.node-gyp/8.11.2/include/node \
-	-I/Users/Ankit/.node-gyp/8.11.2/src \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/openssl/config \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/openssl/openssl/include \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/uv/include \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/zlib \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/v8/include \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/include/node \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/src \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/openssl/config \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/openssl/openssl/include \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/uv/include \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/zlib \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/v8/include \
 	-I$(srcdir)/../../../node_modules/nan
 
 DEFS_Release := \
@@ -82,11 +81,10 @@ CFLAGS_C_Release := \
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
-	-std=gnu++0x \
+	-std=gnu++1y \
 	-stdlib=libc++ \
 	-fno-rtti \
 	-fno-exceptions \
-	-fno-threadsafe-statics \
 	-fno-strict-aliasing
 
 # Flags passed to only ObjC files.
@@ -96,13 +94,13 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/Ankit/.node-gyp/8.11.2/include/node \
-	-I/Users/Ankit/.node-gyp/8.11.2/src \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/openssl/config \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/openssl/openssl/include \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/uv/include \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/zlib \
-	-I/Users/Ankit/.node-gyp/8.11.2/deps/v8/include \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/include/node \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/src \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/openssl/config \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/openssl/openssl/include \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/uv/include \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/zlib \
+	-I/Users/Ankit/.electron-gyp/.node-gyp/4.0.1/deps/v8/include \
 	-I$(srcdir)/../../../node_modules/nan
 
 OBJS := \
